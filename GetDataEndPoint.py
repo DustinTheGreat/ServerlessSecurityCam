@@ -1,13 +1,13 @@
 import boto3
 import webbrowser
 
-STREAM_NAME = "PIStream"
-kvs = boto3.client("kinesisvideo")
-# Grab the endpoint from GetDataEndpoint
-endpoint = kvs.get_data_endpoint(
-    APIName="GET_HLS_STREAMING_SESSION_URL",
-    StreamName=STREAM_NAME
-)['DataEndpoint']
+# STREAM_NAME = "PIStream"
+# kvs = boto3.client("kinesisvideo")
+# # Grab the endpoint from GetDataEndpoint
+# endpoint = kvs.get_data_endpoint(
+#     APIName="GET_HLS_STREAMING_SESSION_URL",
+#     StreamName=STREAM_NAME
+# )['DataEndpoint']
 
 
 def main():
@@ -22,11 +22,21 @@ def main():
 
 	# Grab the HLS Stream URL from the endpoint
 def get_streaming_session():
+
+
+	kvs = boto3.client("kinesisvideo")
+	# Grab the endpoint from GetDataEndpoint
+	endpoint = kvs.get_data_endpoint(
+	    APIName="GET_HLS_STREAMING_SESSION_URL",
+	    StreamName="PiStream3"
+	)['DataEndpoint']
+
+
+	kvs = boto3.client("kinesisvideo")
 	kvam = boto3.client("kinesis-video-archived-media", endpoint_url=endpoint)
 	url = kvam.get_hls_streaming_session_url(
-	    StreamName=STREAM_NAME,
-	    PlaybackMode="ON_DEMAND",
-	    Expires=300
+	    StreamName="PiStream3",
+	    PlaybackMode="LIVE"
 	)['HLSStreamingSessionURL']
 
 	return(url)
