@@ -1,6 +1,7 @@
 import boto3
 import webbrowser
-
+import subprocess
+import cv2
 # STREAM_NAME = "PIStream"
 # kvs = boto3.client("kinesisvideo")
 # # Grab the endpoint from GetDataEndpoint
@@ -16,7 +17,7 @@ def main():
 	url = get_streaming_session()
 	print("Opening Stream")
 	print("----------------------------------")
-	open_media(url)
+	# open_media(url)
 
 
 
@@ -39,7 +40,30 @@ def get_streaming_session():
 	    PlaybackMode="LIVE"
 	)['HLSStreamingSessionURL']
 
-	return(url)
+	opencvurl(url)
+def opencvurl(url):
+	vcap = cv2.VideoCapture(url)
+
+	while(True):
+	    # Capture frame-by-frame
+	    ret, frame = vcap.read()
+
+	    if frame is not None:
+	        # Display the resulting frame
+	        cv2.imshow('frame',frame)
+
+	        # Press q to close the video windows before it ends if you want
+	        if cv2.waitKey(22) & 0xFF == ord('q'):
+	            break
+	    else:
+	        print("Frame is None")
+	        break
+
+	# When everything done, release the capture
+	vcap.release()
+	cv2.destroyAllWindows()
+	print("Video stop")
+
 
 def open_media(url):
 	f = open('index.html','w')
@@ -54,8 +78,7 @@ def open_media(url):
 	f.close()
 
 	#TODO: make user path for pi systems
-	filename = '/home/costanza/Tools/' + 'index.html'
-	webbrowser.open_new_tab(filename)
-
+	filename = 'file://home/costanza/Tools/' + 'index.html'
+	subprocess.run("firefox {}".format(filename), shell=True, check=True)
 if __name__ == '__main__':
 	main()
