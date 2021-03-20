@@ -1,4 +1,4 @@
-# Dashboard: This is for everything UI
+# Dashboard: *This is for everything UI*
 ### Install
 
 ```bash
