@@ -8,3 +8,4 @@ By leveraging the cloud we gain both Security and Functionality. This app will b
 
 Dashboard will use Cognito, lambdas, and API-Gateway all backed by the Serverless Framework. 
 
+![Screenshot](https://github.com/DustinTheGreat/ServerlessSecurityCam/blob/main/Brain_Power_fidgetology_02__SystemArchitectureDiagram.png)
