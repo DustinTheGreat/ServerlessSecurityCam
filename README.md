@@ -8,4 +8,8 @@ By leveraging the cloud we gain both Security and Functionality. This app will b
 
 Dashboard will use Cognito, lambdas, and API-Gateway all backed by the Serverless Framework. 
 
+## Architecture
+
+We are going off the Brain_Power_fidgetology for Machine learning, just subsitute the webcam for the Raspberry Pi w/ SDK
+
 ![Screenshot](https://github.com/DustinTheGreat/ServerlessSecurityCam/blob/main/Brain_Power_fidgetology_02__SystemArchitectureDiagram.png)
