@@ -34,7 +34,7 @@ const Player = () => {
           if (err) { return console.error(err); }
           console.log('Data endpoint: ' + response.DataEndpoint);
           kinesisVideoArchivedContent.endpoint = new AWS.Endpoint(response.DataEndpoint);
-          
+
       });
     }
 
@@ -67,14 +67,14 @@ const Player = () => {
         }
       )
 
-      
+
     }
 
     return (
-     
+
         <div>
 
-
+        <h1>PLAYER</h1>
       {connections ==0 ? (
         <h1>waiting for video to load.....</h1>
       ) : (
@@ -86,4 +86,9 @@ const Player = () => {
     )
 }
 
-export default Player
+export default Player;
+
+
+
+
+

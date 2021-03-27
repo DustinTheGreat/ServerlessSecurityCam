@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getCurrentUser, signOut } from './Cognito'
 import Signin from './Signin'
 
+
 class UserStatus extends Component {
   constructor (props) {
     super(props)
@@ -19,7 +20,6 @@ class UserStatus extends Component {
       }
     })
   }
-
   render () {
 
     return (
@@ -31,7 +31,7 @@ class UserStatus extends Component {
       {this.state.email ===null ? (
         <Signin />
       ) : (
-     <h1>FUCK YOU!!!!!!!!!!!!!</h1>
+     <h1>FUCK YOU!!!!!!!!!!3!!!</h1>
       )}
 
 
