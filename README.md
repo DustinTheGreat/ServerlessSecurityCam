@@ -29,9 +29,12 @@ gst-launch-1.0 v4l2src device=/dev/video0 \
   ```
 
 Dashboard will use Cognito, lambdas, and API-Gateway all backed by the Serverless Framework. 
+## Demo
+<img src="https://media.giphy.com/media/xvEg0tIKiz1DEkuTa5/giphy.gif" width="700" height="400">
+
+
 
 ## Architecture
 
 We are going off the Brain_Power_fidgetology for Machine learning, just subsitute the webcam for the Raspberry Pi w/ SDK
 
-![Screenshot](https://github.com/DustinTheGreat/ServerlessSecurityCam/blob/main/Brain_Power_fidgetology_02__SystemArchitectureDiagram.png)
