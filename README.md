@@ -13,8 +13,9 @@ By leveraging the cloud we gain both Security and Functionality. This app will b
     yarn start
     
    **Producer**  
-Navigate to where you built out the amazon-kinesis-video-streams-producer-sdk-cpp and run the install.sh or if
+SSH into the PI and Navigate to where you built out the amazon-kinesis-video-streams-producer-sdk-cpp and run the install.sh or if
 you already configured this you can just run gst like normal.
+
 ```
 gst-launch-1.0 v4l2src device=/dev/video0 \
   ! videoconvert \
