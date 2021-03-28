@@ -31,12 +31,30 @@ class UserStatus extends Component {
       {this.state.email ===null ? (
         <Signin />
       ) : (
-     <h1>FUCK YOU!!!!!!!!!!3!!!</h1>
+     <h1>Admin Panel</h1>,<br></br>
       )}
 
-
-        <span>{this.state.email}</span>
+         <div>
+      <header className="Navbar">
+        <div className="Toolbar">
+          <div className="Logo">
+            {" "}
+            <span role="img" aria-label="logo">
+              
+            </span>{" "}
+          </div>
+          <div className="sinn" >
+              {this.state.email}
         {this.state.email && <button onClick={signOut}>Sign out</button>}
+          </div>
+        </div>
+   
+      </header>
+
+    </div>
+
+
+       
       </div>
     )
   }

@@ -1,15 +1,16 @@
 import ReactPlayer from 'react-player'
 import AWS from "aws-sdk";
 import React, { useEffect, useState, useRef } from 'react'
-
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 const Player = () => {
     const [connections, setConnections] = useState([])
 
     const streamName = "PiStream3";
 
     const options = {
-        accessKeyId: "",
-        secretAccessKey: "",
+        accessKeyId: "AKIA56YUOEMNYXIHZ3FO",
+        secretAccessKey: "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",
         region: "us-east-1"
     }
     const kinesisVideo = new AWS.KinesisVideo(options);
@@ -22,7 +23,7 @@ const Player = () => {
         if (1==1) {
             setTimeout(() => {
               getStream()
-            }, 10000)
+            }, 5000)
         }
     }, [])
 
@@ -74,11 +75,20 @@ const Player = () => {
 
         <div>
 
-        <h1>PLAYER</h1>
+        
       {connections ==0 ? (
-        <h1>waiting for video to load.....</h1>
+        <Loader
+        type="Puff"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+      />
       ) : (
+      <center>
+          <h1>Live Feed<h1>
          <ReactPlayer url={connections[0]} playing={true} />
+      </center>
       )}
 
 

@@ -2,4 +2,56 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: white;
+  font-family: Roboto;
+}
+.nav {
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: ;
+  color: white;
+  text-align: center;
+
+}
+
+
+.Navbar {
+  background-color: lightsteelblue;
+  position: fixed;
+  top: 0;
+  left: auto;
+  right: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Roboto;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 0px 5px silver;
+}
+
+.Toolbar {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  padding: 0px 10px;
+
+}
+
+.Logo {
+	position: fixed;
+   right: 10%;
+}
+
+.Title {
+
+  flex-grow: 1;
+}
+.sinn {
+
+	position: fixed;
+   right: 5%;
 }
