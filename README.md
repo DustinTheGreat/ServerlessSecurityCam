@@ -36,7 +36,7 @@ Dashboard will use Cognito, lambdas, and API-Gateway all backed by the Serverles
 
 ## Architecture
  For each record written to the Kinesis data stream, the lambda function is invoked. This lambda reads the record from kinesis stream data. If there are any facial matches or mismatches, depending upon how the lambda is configured an email notification is sent via Amazon SNS 
- 
+We will be using Rekognition for the wide variety of use cases, including user verification, cataloging, people counting, and public safety.
 
 
 
