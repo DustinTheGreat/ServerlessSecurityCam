@@ -35,6 +35,7 @@ Dashboard will use Cognito, lambdas, and API-Gateway all backed by the Serverles
 
 
 ## Architecture
+ For each record written to the Kinesis data stream, the lambda function is invoked. This lambda reads the record from kinesis stream data. If there are any facial matches or mismatches, depending upon how the lambda is configured an email notification is sent via Amazon SNS 
 ![project flow](Media/flow.png)
 
 We are going off the Brain_Power_fidgetology for Machine learning, just subsitute the webcam for the Raspberry Pi w/ SDK
