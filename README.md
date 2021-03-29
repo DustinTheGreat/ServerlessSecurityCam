@@ -3,16 +3,16 @@ Raspberry pi cam utilizing AWS's Kinesis Producer SDK.
 We can know offload memory resourceful tasks on to the cloud.
 
 ## About 
-By leveraging the cloud we gain both Security and Functionality. This app will be divided into two directories, one for the serverless web analytics + livestream dashboard. The Second will be for parsing and analytics, and should act as a basic c&c server. 
+By leveraging the cloud we gain both Security and Functionality. This app will be divided into two directories, one for the serverless Dashboard + livestream. The Second will be for Machine Learning and business logic.
 
 ## Install
-   **Client**
+   **Client:**
    
     cd /Dashboard
     yarn 
     yarn start
     
-   **Producer**  
+   **Producer:**  
 SSH into the PI and Navigate to where you built out the amazon-kinesis-video-streams-producer-sdk-cpp and run the install.sh or if
 you already configured this you can just run gst like normal.
 
@@ -37,6 +37,6 @@ Dashboard will use Cognito, lambdas, and API-Gateway all backed by the Serverles
 ## Architecture
  For each record written to the Kinesis data stream, the lambda function is invoked. This lambda reads the record from kinesis stream data. If there are any facial matches or mismatches, depending upon how the lambda is configured an email notification is sent via Amazon SNS 
  
-![project flow](Media/flow.png)
+
 
 
