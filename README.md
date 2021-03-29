@@ -35,6 +35,7 @@ Dashboard will use Cognito, lambdas, and API-Gateway all backed by the Serverles
 
 
 ## Architecture
+![project flow](Media/flow.png)
 
 We are going off the Brain_Power_fidgetology for Machine learning, just subsitute the webcam for the Raspberry Pi w/ SDK
 
