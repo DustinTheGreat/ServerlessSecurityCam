@@ -1,11 +1,23 @@
 #!/bin/sh
+#update
 apt-get update
 apt-get -y upgrade
 apt-get dist-upgrade
-cd /amazon-kinesis-video-streams-producer-sdk-cpp
+
+#enable video
 modprobe bcm2835-v4l2
-export GST_PLUGIN_PATH=`pwd`/build
-export LD_LIBRARY_PATH=`pwd`/open-source/local/lib
+
+
+#set paths for binary
+cat <<EOF >> ~/.bashrc
+export GST_PLUGIN_PATH="/home/pi/Downloads/amazon-kinesis-video-streams-producer-sdk-cpp/"
+export LD_LIBRARY_PATH="/home/pi/Downloads/amazon-kinesis-video-streams-producer-sdk-cpp/open-source/local/lib"
+EOF
+source ~/.bashrc
+
+
+
+#start streamer
 gst-launch-1.0 v4l2src do-timestamp=TRUE device=/dev/video0 \
   ! videoconvert
   ! video/x-raw,format=I420,width=640,height=480,framerate=30/1
